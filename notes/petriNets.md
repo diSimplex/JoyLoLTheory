@@ -1,5 +1,5 @@
 title: Petri Nets
-tags: 
+tags: problems
 
 We are primarily interested in *Coloured* Petri Nets as models of JoyLoL code.
 

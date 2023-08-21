@@ -1,5 +1,5 @@
 title: Event Structures
-tags: 
+tags: problems
 
 Event Structures are 
 
