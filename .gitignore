@@ -1,5 +1,6 @@
-.json
-theVortex.json
+build
+notes/maps/.json
+notes/maps/*.json
 
 .mindMapper.toml
 

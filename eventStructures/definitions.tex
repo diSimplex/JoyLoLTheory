@@ -1,0 +1,56 @@
+% !TEX root = definitions.tex
+% !LPiL preamble = ../jThPreamble.tex
+% !LPiL postamble = ../jThPostamble.tex
+
+\section*{Definitions}
+
+We generalize Winskel's definition of Event Structures \cite{winskel???}
+
+\begin{definition}
+An \define{evStruct}{Event Structure}, \tuple{E, Con, \leq}, consists of a
+collection of \emph{Events} which is partially ordered by $\leq$, the
+\define{causOrd}{causual order}, and a non-empty \define{consitency}{Consistency
+relation}, Con, consisting of finite subsets of $E$, for which:
+
+\begin{itemize}
+  \item $e_1, e_2 \in E$ and $e_2 \leq e_1 \implies \set{e'\suchThat e_2 \leq e'
+    \leq e_1}$ is finite,
+  \item $\set{e} \in Con$ for all $e \in E$,
+  \item $Y \subseteq X \in Con \implies Y \in Con$, and
+    \item $X \in Con$ and $\forall e_1, e_2 \in X, e_2 \leq e' \leq e_1 \implies X
+  \union \set{e'} \in Con$.
+\end{itemize}
+\end{definition}
+
+This is essentially Winskel's definition except that we replace his use of
+``downward closed'' intervals by ``convex'' intervals.
+
+\begin{definition}
+The (finite) configurations, \config{E}, of an event structure, $E$, consists of
+those finite subsets $x \subseteq E$ for which
+\begin{itemize}
+  \item \define{consistent}{Consistent}: $x \in Con$,
+  \item \define{convex}{Convex}: $\forall e_1, e_2 \in x, e' \in E, e_2 \leq e'
+    \leq e_1 \implies e' \in x$
+\end{itemize}
+\end{definition}
+
+Again, in this definition, we replace Winskel's use of ``downward-closed'' by
+``convex''.
+
+\begin{definition}
+A \define{stableFam}{Stable Family} is a non-empty family, \stbFam{F}, of finite
+subsect of $E$, called \define{configurations}{configurations}, for which
+\begin{itemize}
+  \item \define{completeness}{Completeness}: $\forall Z \subseteq \stbFam{F}, Z
+    \uparrow \implies \bigcup Z \in \stbFam{F}$,
+  \item \define{coincidentFree}{Coincidence-freeness} : For all $x \in
+    \stbFam{F}, e, e' \in x$ with $e \ne e'$, 
+    $$ \exists y \in \stbFam{F}, y \subseteq x \& (e \in y \implies e' \notin y)$$,
+  \item \define{stability}{Stability} : $\forall Z \subseteq \stbFam{F}, Z \ne
+    \emptyset \& Z \uparrow \implies \bigcap Z \in \stbFam{F}$
+\end{itemize}
+where we define $Z \uparrow$ to mean $\exists x \in \stbFam{F}, \forall z \in Z, z \subseteq x$ 
+\end{definition}
+
+This \emph{is} Winskel's original definition.
