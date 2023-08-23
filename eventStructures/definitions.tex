@@ -2,19 +2,48 @@
 % !LPiL preamble = ../jThPreamble.tex
 % !LPiL postamble = ../jThPostamble.tex
 
+
+% compare the interval structure of:
+% - martinPanagaden2006spacetimeTalk
+% - martinPanangaden2006spacetimeIntervalsRelativity
+% - martinPanagaden2010domansGenRelativity
+
+
 \section*{Definitions}
 
-We generalize Winskel's definition of Event Structures \cite{winskel???}
+We generalize Winskel's definition of Event Structures
+\cite{winskel1980phdThEvents, winskel1986eventStruct, winskelNielsen1995concurrency,
+rideauWinskel2011concurrentStrategies} (and countless other papers).
+
+% see also:
+% Micheal Shield's book
 
 \begin{definition}
-An \define{evStruct}{Event Structure}, \tuple{E, Con, \leq}, consists of a
-collection of \emph{Events} which is partially ordered by $\leq$, the
-\define{causOrd}{causual order}, and a non-empty \define{consitency}{Consistency
-relation}, Con, consisting of finite subsets of $E$, for which:
+Consider a partially ordered set, \tuple{E, \leq}. We call the elements of the set, $E$, `events'.
+We call the partial order, a `causal order'.
+
+A partially ordered set is locally finite if:
+
+ $$e_1, e_2 \in E \text{ and } e_2 \leq e_1 \implies \set{e' \in E \suchThat e_2 \leq
+   e' \leq e_1} \text{is finite}.$$
+
+A subset, $X$, of $E$ is (with respect to the causal order)
+\begin{itemize}
+  \item \define{dwnCls}{downward-closed} : $e \in X, e' \in E, e' \leq e
+    \implies e' \in X$,
+  \item \define{upward-closed}{upward-closed} : $e \in X, e' \in E, e \leq e'
+    \implies e' \in X$,
+  \item \define{convex}{convex} : $e_1, e_2 \in X, e' \in E, e_1 \leq e' \leq e_2
+    \implies e' \in X$.
+\end{itemize}
+
+An \define{evStruct}{Event Structure}, \tuple{E, \leq, Con}, consists of a
+\emph{pre-event structure} together with a and a non-empty
+\define{consitency}{Consistency relation}, Con, consisting of finite subsets of
+$E$, for which:
 
 \begin{itemize}
-  \item $e_1, e_2 \in E$ and $e_2 \leq e_1 \implies \set{e'\suchThat e_2 \leq e'
-    \leq e_1}$ is finite,
+  \item 
   \item $\set{e} \in Con$ for all $e \in E$,
   \item $Y \subseteq X \in Con \implies Y \in Con$, and
     \item $X \in Con$ and $\forall e_1, e_2 \in X, e_2 \leq e' \leq e_1 \implies X
